@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Kevin's List of Toronto Apartments for Rent</title>
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="span8">
+	<table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Description</th>
+                  <th>Price</th>
+                  <th>Location</th>
+                </tr>
+              </thead>
+              <tbody>
+              <% @listing.each do |i| %>
+                <tr>
+                	<% price = i.css(".price")%>
+                	<% location = i.css("small")%>
+						<td><a href="http://toronto.en.craigslist.ca<%= i.at_css('.pl a')[:href] %>"> <%= i.css(".pl").text.strip%></a></td>
+			            <td><% if !price.nil? %>
+			                	<%= price %>
+			                	<% else %>
+			                	<% "N/A" %>
+			                <% end %>
+			            </td>
+			            <td><% if !location.nil? %>
+								<%= location %>
+								<% else %>
+								<% "N/A" %>
+							<% end %>
+			            </td>
+			        
+			    </tr>
+                <% end %>
+               </tbody>
+   		</table>
+    </div>
+</body>
+</html>
