@@ -12,31 +12,3 @@ get '/' do
 end
 
 
-
-# listing.each do |i| 
-
-# 	puts i.css(".pl").text.strip
-
-	
-# 	price = i.css(".price").text.strip
-
-
-# 	if !price.nil?
-# 		puts price
-# 	else
-# 		puts "N/A"
-# 	end
-
-# 	location = i.css("small").text.strip
-
-
-# 	if !location.nil?
-# 		puts location
-# 	else
-# 		break
-# 		puts "No Location"
-# 	end	
-
-# 	puts ""
-
-# end
