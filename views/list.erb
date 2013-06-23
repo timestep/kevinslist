@@ -3,24 +3,30 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Kevin's List of Toronto Apartments for Rent</title>
-	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+	<link href="https://netdna.bootstrapcdn.com/bootswatch/2.3.2/cyborg/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-	<center>
-	<div class="span8">
-	<table class="table table-hover">
-              <thead>
-                <tr>
-                  <th>Description</th>
-                  <th>Price</th>
-                  <th>Location</th>
-                </tr>
-              </thead>
-              <tbody>
-              <% @listing.each do |i| %>
-                <tr>
-                	<% price = i.css(".price")%>
-                	<% location = i.css("small")%>
+	<div class="navbar navbar-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="brand" href="../"><h3>Kevin's List</h1></a>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<table class="table table-hover">
+		    <thead>
+	            <tr>
+	              <th>Description</th>
+	              <th>Price</th>
+	              <th>Location</th>
+	            </tr>
+	          </thead>
+	        <tbody>
+	          <% @listing.each do |i| %>
+	            <tr>
+	            	<% price = i.css(".price")%>
+	            	<% location = i.css("small")%>
 						<td><a href="http://toronto.en.craigslist.ca<%= i.at_css('.pl a')[:href] %>"> <%= i.css(".pl").text.strip%></a></td>
 			            <td><% if !price.nil? %>
 			                	<%= price %>
@@ -34,12 +40,10 @@
 								<% "N/A" %>
 							<% end %>
 			            </td>
-			        
-			    </tr>
-                <% end %>
-               </tbody>
-   		</table>
-    </div>
-    </center>
+			     </tr>
+	            <% end %>
+	        </tbody>
+		</table>
+	</div>
 </body>
 </html>
