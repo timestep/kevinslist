@@ -15,35 +15,35 @@
 	</div>
 	<div class="container" >
 		<table class="table table-hover" style="margin-top:95px">
-		    <thead>
-	            <tr>
-	              <th>Description</th>
-	              <th>Price</th>
-	              <th>Location</th>
-	            </tr>
-	          </thead>
-	        <tbody>
-	          <% @listing.each do |i| %>
-	            <tr>
-	            	<% price = i.css(".price")%>
-	            	<% location = i.css("small")%>
-						<td><a href="http://toronto.en.craigslist.ca<%= i.at_css('.pl a')[:href] %>"> <%= i.css(".pl").text.strip%></a></td>
-			            <td><% if !price.nil? %>
-			                	<%= price %>
-			                	<% else %>
-			                	<% "N/A" %>
-			                <% end %>
-			            </td>
-			            <td><% if !location.nil? %>
+	    <thead>
+        <tr>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+      	<% @listing.each do |i| %>
+        <tr>
+        	<% price = i.css(".price")%>
+        	<% location = i.css("small")%>
+					<td><a href="http://toronto.en.craigslist.ca<%= i.at_css('.pl a')[:href] %>"> <%= i.css(".pl").text.strip%></a></td>
+         		<td><% if !price.nil? %>
+              	<%= price %>
+              	<% else %>
+              	<% "N/A" %>
+              <% end %>
+          	</td>
+          <td><% if !location.nil? %>
 								<%= location %>
-								<% else %>
+							<% else %>
 								<% "N/A" %>
 							<% end %>
-			            </td>
-			     	</tr>
-	            <% end %>
-	        </tbody>
+          </td>
+     		</tr>
+        <% end %>
+      </tbody>
 		</table>
 	</div>
 </body>
-</html">"
+</html>
