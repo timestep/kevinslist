@@ -7,7 +7,7 @@ require 'bundler/setup'
 get '/' do 
 	url ="http://toronto.en.craigslist.ca/apa/"
 
-	data = Nokogiri::HTML(open(url,'User-Agent' => 'ruby'))
+	data = Nokogiri::HTML(open(url))
 	@listing = data.css(".row")
 	erb :list
 end
